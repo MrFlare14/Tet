@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+</head>
+<body>
+    <div class="open">
+    <h1>Напишите новый пост</h1>
+    <img src="{% static 'main\images\free-icon-message-5249273.png' %}" alt="" width="100px">
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить пост</button>
+    </form>
+         {% if form.errors %}
+          <ul>
+            {% for field in form %}
+              {% for error in fiel.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        </div>
+</body>
+</html>
+
+<style>
+    body{
+        background-color: #f0f4f8;
+        font-family: 'Inter', sans-serif;
+    }
+    h1{
+        text-align: center;
+    }
+    .open {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        width: 450px;
+        margin-left: 500px;
+    }
+    label{
+        margin-left: 150px;
+        font-size: 15px ;
+    }
+    img{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    textarea{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    button{
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        background-color: #3182ce;
+        color: white;
+        margin-top: 10px;            
+    }
+    textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+</style>

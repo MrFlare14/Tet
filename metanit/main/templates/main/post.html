@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    {% load static %}
+</head>
+<body>
+    <div class="open">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.text }}</p>
+    </div>
+</body>
+</html>
+
+<style>
+    body{
+        font-family: 'Inter', sans-serif;
+        background-color: #f0f4f8; 
+    }
+    .open {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        width: 450px;
+        margin-left: 500px;
+    }
+    
+</style>
